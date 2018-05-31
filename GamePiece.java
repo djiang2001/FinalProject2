@@ -1,3 +1,4 @@
+import java.awt.*;
 public abstract class GamePiece{
     int x,y;
     float velX = 0, velY = 0;
@@ -28,7 +29,7 @@ public abstract class GamePiece{
 	this.y = y;
     }
 
-    public getVelX(){
+    public float getVelX(){
 	return velX;
     }
 
