@@ -1,7 +1,6 @@
 
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
+import java.awt.image.*
 
 public class Game extends Canvas implements Runnable {
 
