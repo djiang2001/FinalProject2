@@ -1,15 +1,15 @@
-
 import java.awt.*;
-import java.awt.image.*
+import java.awt.image.*;
 
 public class Game extends Canvas implements Runnable {
 
     private boolean isRunning = false;
     private Thread thread;
     
+    
     public Game(){
 	new Window(1200, 763,"PlayersUnknownMaze", this);
-	
+	start();
     }
     
     private void start() {
