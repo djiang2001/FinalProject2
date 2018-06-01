@@ -1,5 +1,4 @@
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import java.awt.*;
 
 public abstract class GamePiece{
     private int x,y;
@@ -36,7 +35,7 @@ public abstract class GamePiece{
 	this.y = y;
     }
 
-    public getVelX(){
+    public float getVelX(){
 	return velX;
     }
 
