@@ -51,7 +51,7 @@ public class Client{
 	return down;
     }
 
-    public void setDOwn(boolean down){
+    public void setDown(boolean down){
 	this.down = down;
     }
 
