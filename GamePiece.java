@@ -1,13 +1,21 @@
+import java.awt.Graphics;
+import java.awt.Rectangle;
+
 public abstract class GamePiece{
-    int x,y;
-    float velX = 0, velY = 0;
+    private int x,y;
+    private float velX = 0, velY = 0;
+    private ID id;
 	
-    public GamePiece(int x, int y){
+    public GamePiece(int x, int y,ID id){
 	this.x = x;
 	this.y = y;
-	ID id;
+	this.id = id;
     }
 
+    public abstract void tick();
+    public abstract void render(Graphics g);
+    public abstract Rectangle getBounds();
+    
     public ID getId(){
 	return id;
     }
