@@ -60,6 +60,17 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void render(){
+	BufferStrategy b = this.getBufferStrategy();
+	if (b == null){
+	    this.createBufferStrategy(3);
+	    return;
+	}
+
+	Graphics g = b.getDrawGraphics();
+	Graphics2D g2 = (Graphics2D) g;
+
+	g.dispose();
+	b.show();
 
     }
     
