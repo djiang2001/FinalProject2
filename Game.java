@@ -6,7 +6,7 @@ public class Game extends Canvas implements Runnable {
     private boolean isRunning = false;
     private Thread thread;
     private Client client;
-
+    private BufferedImage level = null;
     
     
     public Game(){
@@ -79,11 +79,13 @@ public class Game extends Canvas implements Runnable {
 
 	Graphics g = b.getDrawGraphics();
 	Graphics2D g2 = (Graphics2D) g;
-
+	//////////////////////////////
 	g.setColor(Color.red);
-		g.fillRect(0, 0, 1200, 763);
+	g.fillRect(0, 0, 1200, 763);
 
-		
+	
+
+      	//////////////////////////////
 	g.dispose();
 	b.show();
 
@@ -106,7 +108,7 @@ public class Game extends Canvas implements Runnable {
 		    client.addPiece(new Block(xx * 32, yy * 32, ID.Block));
 
 		if (blue == 255)
-		    client.addPiece(new Wizard(xx * 32, yy * 32, ID.Player, handler));
+		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client));
 	    }
 	}
     }
