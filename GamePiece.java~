@@ -1,9 +1,9 @@
 import java.awt.*;
 
 public abstract class GamePiece{
-    protected int x,y;
-    protected float velX = 0, velY = 0;
-    protected ID id;
+    private int x,y;
+    private float velX = 0, velY = 0;
+    private ID id;
 	
     public GamePiece(int x, int y,ID id){
 	this.x = x;

@@ -13,7 +13,7 @@ public class KeyInput extends KeyAdapter{
 	int key = e.getKeyCode();
 
 	for(int i = 0; i < client.piece.size(); i++){
-	    GamePiece tempPiece = client.puece.get(i);
+	    GamePiece tempPiece = client.piece.get(i);
 
 	    if(tempPiece.getId() == ID.Player){
 		if(key == KeyEvent.VK_W) client.setUp(true);
