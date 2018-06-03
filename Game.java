@@ -7,14 +7,14 @@ public class Game extends Canvas implements Runnable {
     private Thread thread;
     private Client client;
     private BufferedImage level = null;
-    
+    private Camera camera;
     
     public Game(){
 	new Window(1200, 763,"PlayersUnknownMaze", this);
 	start();
 
 	client = new Client();
-
+	camera = new Camera(0,0);
 	this.addKeyListener(new KeyInput(client));
 
 	Loader loader = new Loader();
@@ -67,7 +67,13 @@ public class Game extends Canvas implements Runnable {
     }
 
     public void tick(){
+	for(int i = 0; i < client.piece.size(); i++){
+	    if(client.piece.get(i).getId() == ID.Player){
+		camera.tick(client.piece.get(i));
+	    }
+	}
 
+	client.tick();
     }
 
     public void render(){
@@ -78,13 +84,16 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	Graphics g = b.getDrawGraphics();
-	Graphics2D g2 = (Graphics2D) g;
+	Graphics2D g2d = (Graphics2D) g;
 	//////////////////////////////
 	g.setColor(Color.red);
 	g.fillRect(0, 0, 1200, 763);
 
-	
+	g2d.translate(-camera.getX(),-camera.getY());
 
+	client.render(g);
+
+	g2d.translate(camera.getX(),-camera.getY());
       	//////////////////////////////
 	g.dispose();
 	b.show();
