@@ -1,0 +1,24 @@
+import java.awt.*;
+import java.util.*;
+
+public class Boss extends GamePiece{
+
+    private Client client;
+    int hp = 1000;
+
+    public Boss(int x,int y, ID id, Client client){
+
+    }
+
+    public void tick(){
+	v += velX;
+	y+= velY;
+	
+    }
+    
+    public void render(Graphics g){
+	g.setColor(Color.green);
+	g.fillRect(x,y,150,150);
+    }
+
+}
