@@ -2,7 +2,7 @@ import java.awt.Graphics;
 import java.util.*;
 
 public class Client{
-    ArrayList<GamePiece> piece = new ArrayList<GamePiece>();
+    LinkedList<GamePiece> piece = new LinkedList<GamePiece>();
     private boolean up = false;
     private boolean down = false;
     private boolean right = false;
@@ -31,11 +31,11 @@ public class Client{
 	piece.remove(tempPiece);
     }
 
-    public ArrayList<GamePiece> getPiece(){
+    public LinkedList<GamePiece> getPiece(){
 	return piece;
     }
     
-    public void setPiece(ArrayList<GamePiece> piece){
+    public void setPiece(LinkedList<GamePiece> piece){
 	this.piece = piece;
     }
 
