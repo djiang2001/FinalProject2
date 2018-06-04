@@ -7,6 +7,7 @@ public class Client{
     private boolean down = false;
     private boolean right = false;
     private boolean left = false;
+    private boolean attack = false;
 
     public void tick(){
 	for(int i = 0; i < piece.size(); i++){
@@ -70,4 +71,13 @@ public class Client{
     public void setLeft(boolean left){
 	this.left = left;
     }
+    
+    private boolean isAttack(){
+    return attack;
+    }
+    
+    public void setAttack(boolean attack){
+    this.attack = attack;
+    }
+    
 }

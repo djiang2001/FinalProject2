@@ -20,7 +20,11 @@ public class KeyInput extends KeyAdapter{
 		if(key == KeyEvent.VK_S) client.setDown(true);
 		if(key == KeyEvent.VK_A) client.setLeft(true);
 		if(key == KeyEvent.VK_D) client.setRight(true);
+		
 	    }
+	    /*if(tempPiece.getId() == ID.Block){
+	    if(key == KeyEvent.VK_L) client.setAttack(true);
+	    }*/
 
 	}
 
@@ -43,6 +47,10 @@ public class KeyInput extends KeyAdapter{
 				if (key == KeyEvent.VK_D)
 				    client.setRight(false);
 			}
+			/*if(tempPiece.getId() == ID.Block){
+	    		if(key == KeyEvent.VK_L) 
+	    			client.setAttack(false);
+	    }*/
 
 	}
 
