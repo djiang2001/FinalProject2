@@ -23,11 +23,8 @@ public class Enemy extends GamePiece{
 
 	    if(tempPiece.getId() == ID.Player){
 		if(getDetectionRadius().intersects(tempPiece.getBounds())){
-
-
-
-
-
+		    velX = (tempPiece.getX() - velX) / Math.abs(tempPiece.getX() - velX);
+	       	    velY = (tempPiece.getY() - velY) / Math.abs(tempPiece.getY() - velY);
 		}else
 		    if(choice == 0){
 			velX = (r.nextInt(5 - -5) + -5);
