@@ -22,16 +22,19 @@ public class Enemy extends GamePiece{
 	    GamePiece tempPiece = client.piece.get(i);
 
 	    if(tempPiece.getId() == ID.Block){
+		if(getOuterBounds().intersects(tempPiece.getBounds())){
+		    x += (velX*2)*-1;
+		    y += (velY*2)*-1;
+		    velX = 0;
+		    velY = 0;
+		    //collision
+		} else
+		    if(choice == 0){
+			velX = (r.nextInt(5 - -5) + -5);
+			velY = (r.nextInt(5 - -5) + -5);
+		    }
 	    }
-	} //collision
-
-	if(choice == 0){
-	    velX = (r.nextInt(5 - -5) + -5);
-	    velY = (r.nextInt(5 - -5) + -5);
 	}
-    }
-
-	
     }
 
     public void render(Graphics g){
@@ -47,4 +50,7 @@ public class Enemy extends GamePiece{
 	return new Rectangle(x-16, y - 16, 64, 64);
     }
 
+    public Rectangle getDetectionRadius(){
+	return new Rectangle(x - 16, y - 16, 1000,1000);
+    }
 }
