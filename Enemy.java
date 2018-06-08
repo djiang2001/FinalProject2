@@ -45,8 +45,15 @@ public class Enemy extends GamePiece{
 			velY = (r.nextInt(5 - -5) + -5);
 		    }
 	    }
+	    if(tempPiece.getId() == ID.Sword){
+	    	if(getBounds().intersects(tempPiece.getBounds())){
+	    		hp -= 50;
+	    		client.removePiece(tempPiece);
+	    }
 	}
     }
+    if(hp <= 0) client.removePiece(this);
+}
 
     public void render(Graphics g){
 	g.setColor(Color.yellow);
