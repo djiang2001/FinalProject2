@@ -12,9 +12,8 @@ public class Attack extends GamePiece {
 
 	int dX = mx - x;
 	int dY = my - y;
-	double dist = Math.sqrt(x*x + y*y);
-	velX = (int) (30 * dX/dist);
-	velY = (int) (30 * dY/dist);
+	velX =  (10 * dX/Math.abs(dX));
+	velY =  (10 * dY/Math.abs(dY));
     }
 
     public void tick() {
