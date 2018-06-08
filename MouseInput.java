@@ -11,7 +11,7 @@ public class MouseInput extends MouseAdapter{
 	this.camera = camera;
     }
 
-    public void MousePressed(MouseEvent e){
+    public void mousePressed(MouseEvent e){
 	int mx = (int) (e.getX() + camera.getX());
 	int my = (int) (e.getY() + camera.getY());
 
