@@ -8,6 +8,7 @@ public class Game extends Canvas implements Runnable {
     private Client client;
     private BufferedImage level = null;
     private Camera camera;
+    public int numSpears = 100;
     
     public Game(){
 	new Window(1000, 563,"PlayersUnknownMaze", this);
@@ -16,7 +17,7 @@ public class Game extends Canvas implements Runnable {
 	client = new Client();
 	camera = new Camera(0,0);
 	this.addKeyListener(new KeyInput(client));
-	this.addMouseListener(new MouseInput(client,camera));
+	this.addMouseListener(new MouseInput(client,camera,this));
 
 	Loader loader = new Loader();
 	level = loader.loadImage("/Level1.png");

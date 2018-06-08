@@ -5,10 +5,12 @@ public class MouseInput extends MouseAdapter {
 
 	private Client client;
 	private Camera camera;
+	private Game game;
 
-	public MouseInput(Client client,Camera camera) {
+	public MouseInput(Client client,Camera camera, Game game) {
 		this.client = client;
 		this.camera = camera;
+		this.game = game;
 	}
 
 	public void mousePressed(MouseEvent e) {
@@ -21,6 +23,7 @@ public class MouseInput extends MouseAdapter {
 			if (tempPiece.getId() == ID.Player) {
 				client.addPiece(
 						new Attack(tempPiece.getX() + 16, tempPiece.getY() + 24, ID.Sword, client, mx, my));
+						game.numSpears--;
 			}
 		}
 	}
