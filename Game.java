@@ -8,6 +8,8 @@ public class Game extends Canvas implements Runnable {
     private Client client;
     private BufferedImage level = null;
     private Camera camera;
+    public int numSpears = 100;
+    public int myHp = 500;
     
     public Game(){
 	new Window(1000, 563,"PlayersUnknownMaze", this);
@@ -16,7 +18,7 @@ public class Game extends Canvas implements Runnable {
 	client = new Client();
 	camera = new Camera(0,0);
 	this.addKeyListener(new KeyInput(client));
-	this.addMouseListener(new MouseInput(client,camera));
+	this.addMouseListener(new MouseInput(client,camera,this));
 
 	Loader loader = new Loader();
 	level = loader.loadImage("/Level1.png");
@@ -118,12 +120,16 @@ public class Game extends Canvas implements Runnable {
 		if (red == 255)
 		    client.addPiece(new Block(xx * 32, yy * 32, ID.Block));
 
-		if (blue == 255)
-		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client));
+		if (blue == 255 && green == 0)
+		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client, this));
 	    
-		if (green == 255)
+		if (green == 255 && blue == 0)
 		    client.addPiece(new Enemy(xx * 32, yy * 32, ID.Enemy, client));
+	    
+	    if (green == 255 && blue == 255)
+	    	client.addPiece(new Chest(xx * 32, yy * 32, ID.Chest));
 	    }
+	    
 	
 	}
 }

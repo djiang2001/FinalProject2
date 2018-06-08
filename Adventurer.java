@@ -5,10 +5,12 @@ import java.awt.Rectangle;
 public class Adventurer extends GamePiece {
 
 	Client client;
+	Game game;
 
-	public Adventurer(int x, int y, ID id, Client client) {
+	public Adventurer(int x, int y, ID id, Client client, Game game) {
 		super(x, y, id);
 		this.client = client;
+		this.game = game;
 	}
 
 	public void tick() {
@@ -47,6 +49,14 @@ public class Adventurer extends GamePiece {
 				if (getBounds().intersects(tempPiece.getBounds())) {
 					x += velX * -1;
 					y += velY * -1;
+				}
+			}
+			
+			if (tempPiece.getId() == ID.Chest) {
+				if (getBounds().intersects(tempPiece.getBounds())) {
+					game.numSpears += 10;
+					game.myHp += 50;
+					client.removePiece(tempPiece);
 				}
 			}
 		}

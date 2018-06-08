@@ -12,7 +12,7 @@ public class Attack extends GamePiece {
 
 	/*	int dX = mx - x;
 	int dY = my - y;
-	velX =  (10 * dX/Math.abs(dX));
+	velX =  (10  * dX/Math.abs(dX));
 	velY =  (10 * dY/Math.abs(dY));
 	*/
 	velX = mx - x;

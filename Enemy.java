@@ -33,7 +33,11 @@ public class Enemy extends GamePiece{
 	    
 	    
 	    }
+<<<<<<< HEAD
 	    
+=======
+	
+>>>>>>> 45cbb5cc86d42b3f79ba551d34ad283b057f5a67
 	    if(tempPiece.getId() == ID.Block){
 		if(getOuterBounds().intersects(tempPiece.getBounds())){
 		    x += (velX*2)*-1;
