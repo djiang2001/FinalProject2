@@ -122,7 +122,7 @@ public class Game extends Canvas implements Runnable {
 		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client));
 	    
 	    if (green == 225)
-	    	client.addPiece(new Enemy(xx + 32, yy * 32, ID.Enemy, client));
+	    	client.addPiece(new Enemy(xx * 32, yy * 32, ID.Enemy, client));
 		}
 	
 	}
