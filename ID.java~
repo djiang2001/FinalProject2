@@ -1,3 +1,3 @@
 public enum ID {
-    Player(), Block(), Sword(), Enemy();
+    Player(), Block(), Attack(), Enemy();
 }

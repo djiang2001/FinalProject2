@@ -37,11 +37,11 @@ public class Attack extends GamePiece {
 
 	public void render(Graphics g) {
 		g.setColor(Color.green);
-		g.fillRect(x, y, 10, 10);
+		g.fillOval(x, y, 10, 10);
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle(x, y, 10, 10);
+		return new Rectangle(x, y, 8, 8);
 	}
 
 }

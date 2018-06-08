@@ -16,6 +16,7 @@ public class Game extends Canvas implements Runnable {
 	client = new Client();
 	camera = new Camera(0,0);
 	this.addKeyListener(new KeyInput(client));
+	this.addMouseListener(new MouseInput(client,camera));
 
 	Loader loader = new Loader();
 	level = loader.loadImage("/Level1.png");
@@ -119,7 +120,6 @@ public class Game extends Canvas implements Runnable {
 
 		if (blue == 255)
 		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client));
-		if(yellow = 
 	    }
 	}
     }
