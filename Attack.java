@@ -10,10 +10,13 @@ public class Attack extends GamePiece {
 	super(x, y, id);
 	this.client = client;
 
-	int dX = mx - x;
+	/*	int dX = mx - x;
 	int dY = my - y;
 	velX =  (10 * dX/Math.abs(dX));
 	velY =  (10 * dY/Math.abs(dY));
+	*/
+	velX = mx - x;
+	velY = my-y;
     }
 
     public void tick() {

@@ -18,9 +18,9 @@ public class Enemy extends GamePiece{
 
 	choice = r.nextInt(10);
 	
-	/*	for(int i = 0; i < client.piece.size(); i++){
+		for(int i = 0; i < client.piece.size(); i++){
 	    GamePiece tempPiece = client.piece.get(i);
-
+	    
 	    if(tempPiece.getId() == ID.Player){
 		if(getDetectionRadius().intersects(tempPiece.getBounds())){
 		    velX = (tempPiece.getX() - velX) / Math.abs(tempPiece.getX() - velX);
@@ -30,8 +30,10 @@ public class Enemy extends GamePiece{
 			velX = (r.nextInt(5 - -5) + -5);
 			velY = (r.nextInt(5 - -5) + -5);
 		    }
+	    
+	    
 	    }
-	*/
+	    
 	    if(tempPiece.getId() == ID.Block){
 		if(getOuterBounds().intersects(tempPiece.getBounds())){
 		    x += (velX*2)*-1;
