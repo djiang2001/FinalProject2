@@ -11,13 +11,11 @@ public class Attack extends GamePiece {
 		super(x, y, id);
 		this.client = client;
 
-		/*	int dX = mx - x;
+	      	int dX = mx - x;
 		int dY = my - y;
 		double dist = Math.sqrt(x*x + y*y);
 		velX = (int) (30 * dX/dist);
-		velY = (int) (30 * dY/dist);*/
-		velX = (my - x)/10;
-		velY = (my - y)/10;
+		velY = (int) (30 * dY/dist);
 	}
 
 	public void tick() {
