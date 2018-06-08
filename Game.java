@@ -10,7 +10,7 @@ public class Game extends Canvas implements Runnable {
     private Camera camera;
     
     public Game(){
-	new Window(1200, 763,"PlayersUnknownMaze", this);
+	new Window(1000, 563,"PlayersUnknownMaze", this);
 	start();
 
 	client = new Client();
@@ -88,7 +88,7 @@ public class Game extends Canvas implements Runnable {
 	Graphics2D g2d = (Graphics2D) g;
 	//////////////////////////////
 	g.setColor(Color.red);
-	g.fillRect(0, 0, 1200, 763);
+	g.fillRect(0, 0, 1000, 563);
 
 	g2d.translate(-camera.getX(),-camera.getY());
 
@@ -121,9 +121,9 @@ public class Game extends Canvas implements Runnable {
 		if (blue == 255)
 		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client));
 	    
-	    if (green == 225)
-	    	client.addPiece(new Enemy(xx * 32, yy * 32, ID.Enemy, client));
-		}
+		if (green == 225)
+		    client.addPiece(new Enemy(xx * 32, yy * 32, ID.Enemy, client));
+	    }
 	
 	}
 }

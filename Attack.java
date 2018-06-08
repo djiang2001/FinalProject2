@@ -1,24 +1,23 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import java.util.*;
 
 public class Attack extends GamePiece {
 
-	private Client client;
+    private Client client;
 
-	public Attack(int x, int y, ID id, Client client, int mx, int my) {
-		super(x, y, id);
-		this.client = client;
+    public Attack(int x, int y, ID id, Client client, int mx, int my) {
+	super(x, y, id);
+	this.client = client;
 
-		/*	int dX = mx - x;
-		int dY = my - y;
-		double dist = Math.sqrt(x*x + y*y);*/
-		velX = (mx - x) / 10;//(int) (30 * dX/dist);
-		velY = (my - y) / 10; //(int) (30 * dY/dist);
-	}
+	int dX = mx - x;
+	int dY = my - y;
+	double dist = Math.sqrt(x*x + y*y);
+	velX = (int) (30 * dX/dist);
+	velY = (int) (30 * dY/dist);
+    }
 
-	public void tick() {
+    public void tick() {
 		x += velX;
 		y += velY;
 
@@ -35,11 +34,11 @@ public class Attack extends GamePiece {
 
 	public void render(Graphics g) {
 		g.setColor(Color.green);
-		g.fillRect(x, y, 10, 10);
+		g.fillOval(x, y, 8, 8);
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle(x, y, 10, 10);
+		return new Rectangle(x, y, 8, 8);
 	}
 
 }
