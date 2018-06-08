@@ -126,5 +126,6 @@ public class Game extends Canvas implements Runnable {
     
     public static void main(String[]args){
 	new Game();
+	
     }
 }
