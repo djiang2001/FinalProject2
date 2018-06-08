@@ -9,6 +9,7 @@ public class Game extends Canvas implements Runnable {
     private BufferedImage level = null;
     private Camera camera;
     public int numSpears = 100;
+    public int myHp = 500;
     
     public Game(){
 	new Window(1000, 563,"PlayersUnknownMaze", this);
@@ -120,12 +121,12 @@ public class Game extends Canvas implements Runnable {
 		    client.addPiece(new Block(xx * 32, yy * 32, ID.Block));
 
 		if (blue == 255 && green == 0)
-		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client));
+		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client, this));
 	    
 		if (green == 255 && blue == 0)
 		    client.addPiece(new Enemy(xx * 32, yy * 32, ID.Enemy, client));
 	    
-	    if (green = 255 && blue == 255)
+	    if (green == 255 && blue == 255)
 	    	client.addPiece(new Chest(xx * 32, yy * 32, ID.Chest));
 	    }
 	    
