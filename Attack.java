@@ -1,4 +1,4 @@
-import java.awt.Color;
+ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
@@ -15,8 +15,8 @@ public class Attack extends GamePiece {
 	velX =  (10  * dX/Math.abs(dX));
 	velY =  (10 * dY/Math.abs(dY));
 	*/
-	velX = (mx - x)/10;
-	velY = (my - y)/10;
+	velX = (mx - x)/100;
+	velY = (my - y)/100;
     }
 
     public void tick() {

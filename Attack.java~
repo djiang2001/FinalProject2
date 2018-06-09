@@ -4,17 +4,22 @@ import java.awt.Rectangle;
 
 public class Attack extends GamePiece {
 
-	private Client client;
+    private Client client;
 
-	public Attack(int x, int y, ID id, Client client, int mx, int my) {
-		super(x, y, id);
-		this.client = client;
+    public Attack(int x, int y, ID id, Client client, int mx, int my) {
+	super(x, y, id);
+	this.client = client;
 
-		velX = (mx - x) / 10;
-		velY = (my - y) / 10;
-	}
+	/*	int dX = mx - x;
+	int dY = my - y;
+	velX =  (10  * dX/Math.abs(dX));
+	velY =  (10 * dY/Math.abs(dY));
+	*/
+	velX = (mx - x)/10;
+	velY = (my - y)/10;
+    }
 
-	public void tick() {
+    public void tick() {
 		x += velX;
 		y += velY;
 
