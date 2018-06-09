@@ -13,7 +13,7 @@ public class Game extends Canvas implements Runnable {
     public int myHp = 100;
     
     public Game(){
-	new Window(1000, 563,"PlayersUnknownMaze", this);
+	new Window(1000, 563,"WarriorsUnknownMaze", this);
 	start();
 
 	client = new Client();

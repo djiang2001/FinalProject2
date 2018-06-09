@@ -9,14 +9,10 @@ public class Attack extends GamePiece {
     public Attack(int x, int y, ID id, Client client, int mx, int my) {
 	super(x, y, id);
 	this.client = client;
-
-	/*	int dX = mx - x;
-	int dY = my - y;
-	velX =  (10  * dX/Math.abs(dX));
-	velY =  (10 * dY/Math.abs(dY));
-	*/
-	velX = (mx - x)/100;
-	velY = (my - y)/100;
+	if((mx - x) > 100 ||(my - y) > 100){
+	velX = (mx - x)/10;
+	velY = (my - y)/10;
+	}
     }
 
     public void tick() {

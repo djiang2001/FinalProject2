@@ -43,7 +43,8 @@ public class Adventurer extends GamePiece {
 	private void collision() {
 		for (int i = 0; i < client.piece.size(); i++) {
 
-			GamePiece tempPiece = client.piece.get(i);
+
+		    GamePiece tempPiece = client.piece.get(i);
 
 			if (tempPiece.getId() == ID.Block) {
 				if (getBounds().intersects(tempPiece.getBounds())) {
