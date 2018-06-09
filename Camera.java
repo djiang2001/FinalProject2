@@ -14,7 +14,7 @@ public class Camera{
 
 	//collision camera
 	if(x<= 0) x = 0;
-	if(x >= 1032) x = 1048;
+	if(x >= 1048) x = 1048;
 	if(y <= 0) y = 0;
 	if(y >= 563 + 48) y = 563 + 48;
     }

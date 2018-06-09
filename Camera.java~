@@ -9,14 +9,14 @@ public class Camera{
 
     public void tick(GamePiece piece){
 	//camera movement
-	x+= ((piece.getX() - x) - 1200/2) * 0.05f;
-	y+= ((piece.getY() - y) - 763/2) * 0.05f;
+	x+= ((piece.getX() - x) - 1000/2) * 0.05f;
+	y+= ((piece.getY() - y) - 563/2) * 0.05f;
 
 	//collision camera
 	if(x<= 0) x = 0;
-	if(x >= 1232) x = 1248;
+	if(x >= 1032) x = 1048;
 	if(y <= 0) y = 0;
-	if(y >= 763 + 48) y = 763 + 48;
+	if(y >= 563 + 48) y = 563 + 48;
     }
 
     public float getX(){

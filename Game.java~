@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.image.*;
+import java.awt.Color;
 
 public class Game extends Canvas implements Runnable {
 
@@ -8,15 +9,17 @@ public class Game extends Canvas implements Runnable {
     private Client client;
     private BufferedImage level = null;
     private Camera camera;
+    public int numSpears = 100;
+    public int myHp = 100;
     
     public Game(){
-	new Window(1200, 763,"PlayersUnknownMaze", this);
+	new Window(1000, 563,"PlayersUnknownMaze", this);
 	start();
 
 	client = new Client();
 	camera = new Camera(0,0);
 	this.addKeyListener(new KeyInput(client));
-	this.addMouseListener(new MouseInput(client,camera));
+	this.addMouseListener(new MouseInput(client,camera,this));
 
 	Loader loader = new Loader();
 	level = loader.loadImage("/Level1.png");
@@ -88,13 +91,23 @@ public class Game extends Canvas implements Runnable {
 	Graphics2D g2d = (Graphics2D) g;
 	//////////////////////////////
 	g.setColor(Color.red);
-	g.fillRect(0, 0, 1200, 763);
+	g.fillRect(0, 0, 1000, 563);
 
 	g2d.translate(-camera.getX(),-camera.getY());
 
 	client.render(g);
 
 	g2d.translate(camera.getX(),-camera.getY());
+	
+	g.setColor(Color.gray);
+	g.fillRect(5, 5, 200, 32);
+	g.setColor(Color.green);
+	g.fillRect(5, 5, myHp*2, 32);
+	g.setColor(Color.black);
+	g.drawRect(5, 5, 200, 32);
+	
+	g.setColor(Color.white);
+	g.drawString("Spears: " + numSpears, 5, 50);
       	//////////////////////////////
 	g.dispose();
 	b.show();
@@ -118,22 +131,23 @@ public class Game extends Canvas implements Runnable {
 		if (red == 255)
 		    client.addPiece(new Block(xx * 32, yy * 32, ID.Block));
 
-		if (blue == 255)
-		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client));
+		if (blue == 255 && green == 0)
+		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client, this));
 	    
-	    if (green == 225)
-	    	client.addPiece(new Enemy(xx + 32, yy * 32, ID.Enemy, client));
-		}
+		if (green == 255 && blue == 0)
+		    client.addPiece(new Enemy(xx * 32, yy * 32, ID.Enemy, client));
+	    
+	    if (green == 255 && blue == 255)
+	    	client.addPiece(new Chest(xx * 32, yy * 32, ID.Chest));
+	    }
+	    
 	
 	}
 }
     
     public static void main(String[]args){
-<<<<<<< HEAD
+
 	new Game();
-	
-=======
-		new Game();
->>>>>>> 2eedaa40f3b745c9bf31365a91108f2ecda52d7f
+    
     }
 }
