@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 public class Main extends JPanel implements ActionListener{
@@ -8,13 +9,13 @@ public class Main extends JPanel implements ActionListener{
 	private JButton startbutton;
 	private JButton instructions;
 	public Main(){
-		menuscreen = new JFrame["Breakout Menu Screen"];
+		menuscreen = new JFrame("Breakout Menu Screen");
 		startbutton = new JButton("PLAY");
 		startbutton.setPreferredSize(new Dimension(100,100));
-		startbutton.setBounds(/*SEE WHERE YOU WANT IT*/);
+		startbutton.setBounds(200,200,200,200);
 		instructions = new JButton("HOW TO PLAY");
 		instructions.setPreferredSize(new Dimension(100,100));
-		instructions.setBounds(/*SEE WHERE YOU WANT IT*/);
+		instructions.setBounds(100,100,100,100);
 		menuscreen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		c = menuscreen.getContentPane();
 		this.setLayout(null);
@@ -33,10 +34,9 @@ public class Main extends JPanel implements ActionListener{
 	}
 	
 	public static void main(String[] args){
-	
+		new Main();
 	}
 	
-	@Override
 	public void actionPerformed(ActionEvent arg){
 	
 	}
