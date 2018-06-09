@@ -15,8 +15,8 @@ public class Attack extends GamePiece {
 	velX =  (10  * dX/Math.abs(dX));
 	velY =  (10 * dY/Math.abs(dY));
 	*/
-	velX = mx - x;
-	velY = my-y;
+	velX = (mx - x)/10;
+	velY = (my - y)/10;
     }
 
     public void tick() {
