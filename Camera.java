@@ -14,9 +14,9 @@ public class Camera{
 
 	//collision camera
 	if(x<= 0) x = 0;
-	if(x >= 1032) x = 1048;
+	if(x >= 1100) x = 1100;
 	if(y <= 0) y = 0;
-	if(y >= 563 + 48) y = 563 + 48;
+	if(y >= 663) y = 663;
     }
 
     public float getX(){

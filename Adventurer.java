@@ -70,12 +70,12 @@ public class Adventurer extends GamePiece {
 	
 	public void render(Graphics g) {
 		g.setColor(Color.blue);
-		g.fillRect(x, y, 32, 48);
+		g.fillRect(x, y, 16, 24);
 
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle(x, y, 32, 48);
+	    return new Rectangle(x, y, 16,24);
 	}
 
 }

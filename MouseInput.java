@@ -22,7 +22,7 @@ public class MouseInput extends MouseAdapter {
 
 			if (tempPiece.getId() == ID.Player && game.numSpears >= 1) {
 				client.addPiece(
-						new Attack(tempPiece.getX() + 16, tempPiece.getY() + 24, ID.Sword, client, mx, my));
+						new Attack(tempPiece.getX() + 8, tempPiece.getY() + 12, ID.Sword, client, mx, my));
 						game.numSpears--;
 			}
 		}
