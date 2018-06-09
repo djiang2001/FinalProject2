@@ -22,7 +22,7 @@ public class Game extends Canvas implements Runnable {
 	this.addMouseListener(new MouseInput(client,camera,this));
 
 	Loader loader = new Loader();
-	level = loader.loadImage("/Level1.png");
+	level = loader.loadImage("/Level.png");
 
 	loadLevel(level);
     }
