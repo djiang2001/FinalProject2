@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.image.*;
+import java.awt.Color;
 
 public class Game extends Canvas implements Runnable {
 
@@ -9,7 +10,7 @@ public class Game extends Canvas implements Runnable {
     private BufferedImage level = null;
     private Camera camera;
     public int numSpears = 100;
-    public int myHp = 500;
+    public int myHp = 100;
     
     public Game(){
 	new Window(1000, 563,"PlayersUnknownMaze", this);
@@ -97,6 +98,16 @@ public class Game extends Canvas implements Runnable {
 	client.render(g);
 
 	g2d.translate(camera.getX(),-camera.getY());
+	
+	g.setColor(Color.gray);
+	g.fillRect(5, 5, 200, 32);
+	g.setColor(Color.green);
+	g.fillRect(5, 5, myHp*2, 32);
+	g.setColor(Color.black);
+	g.drawRect(5, 5, 200, 32);
+	
+	g.setColor(Color.white);
+	g.drawString("Spears: " + numSpears, 5, 50);
       	//////////////////////////////
 	g.dispose();
 	b.show();
