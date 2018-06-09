@@ -59,6 +59,12 @@ public class Adventurer extends GamePiece {
 					client.removePiece(tempPiece);
 				}
 			}
+			
+			if (tempPiece.getId() == ID.Enemy) {
+				if (getBounds().intersects(tempPiece.getBounds())) {
+					game.myHp--;
+				}
+			}
 		}
 	}
 	
