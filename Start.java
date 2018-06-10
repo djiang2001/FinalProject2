@@ -9,13 +9,13 @@ public class Start extends JFrame{
   private JFrame start = new JFrame("Introduction");
   private static JButton enter = new JButton("Continue");
   private static JTextArea intro = new JTextArea();
-  private static String words = "\n\nOh Dear!\n\nYou were talking to that one special person when your fingers fumbled. While trying to take back what you wrote, you have been blocked. Now it is your mission to be...";
+  private static String words = "In a realm far away, monsters of unknown creation were creating havoc. These monsters escape from the dreaded labyrinth, said to have been created by an ancient cult. Every few months, worthy heroes, unnamed, known as warriors unknown,  are sent in, only to never return. You have been chosen, and now you must face your fate. Save your people, or die trying...";
 
   //Game Intro Constructor
   public Start(){
     pane = this.getContentPane();
     this.setTitle("WarriorsUnkownMaze");
-    this.setSize(600,300);
+    this.setSize(1000,563);
     this.setLocation(700 ,300);
     this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
