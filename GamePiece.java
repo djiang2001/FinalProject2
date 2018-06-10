@@ -4,11 +4,13 @@ public abstract class GamePiece{
     protected int x,y;
     protected float velX = 0, velY = 0;
     protected ID id;
-	
-    public GamePiece(int x, int y,ID id){
+    protected SpriteSheet ss;
+    
+    public GamePiece(int x, int y,ID id, SpriteSheet ss){
 	this.x = x;
 	this.y = y;
 	this.id = id;
+	this.ss = ss;
     }
 
     public abstract void tick();

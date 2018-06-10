@@ -2,8 +2,8 @@ import java.awt.*;
 
 public class Block extends GamePiece{
 
-    public Block(int x, int y, ID id){
-	super(x,y,id);
+    public Block(int x, int y, ID id,SpriteSheet ss){
+	super(x,y,id,ss);
     }
 
     public void tick(){

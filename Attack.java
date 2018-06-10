@@ -6,8 +6,8 @@ public class Attack extends GamePiece {
 
     private Client client;
 
-    public Attack(int x, int y, ID id, Client client, int mx, int my) {
-	super(x, y, id);
+    public Attack(int x, int y, ID id, Client client,SpriteSheet ss, int mx, int my) {
+	super(x, y, id,ss);
 	this.client = client;
 	if((mx - x) > 100 ||(my - y) > 100){
 	velX = (mx - x)/10;

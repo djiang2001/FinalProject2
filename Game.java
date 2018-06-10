@@ -7,7 +7,11 @@ public class Game extends Canvas implements Runnable {
     private boolean isRunning = false;
     private Thread thread;
     private Client client;
+    private SpriteSheet ss;
+    
     private BufferedImage level = null;
+    private BufferedImage spriteSheet = null;
+    
     private Camera camera;
     public int numSpears = 100;
     public int myHp = 100;
@@ -19,11 +23,16 @@ public class Game extends Canvas implements Runnable {
 	client = new Client();
 	camera = new Camera(0,0);
 	this.addKeyListener(new KeyInput(client));
-	this.addMouseListener(new MouseInput(client,camera,this));
 
 	Loader loader = new Loader();
 	level = loader.loadImage("/Level1.png");
+	//spriteSheet = loader.loadImage("/spriteSheet.png");
 
+	this.addMouseListener(new MouseInput(client,camera,this,ss));
+
+
+	ss = new SpriteSheet(spriteSheet);
+	
 	loadLevel(level);
     }
     
@@ -129,16 +138,16 @@ public class Game extends Canvas implements Runnable {
 		int yellow = (pixel);
 
 		if (red == 255)
-		    client.addPiece(new Block(xx * 32, yy * 32, ID.Block));
+		    client.addPiece(new Block(xx * 32, yy * 32, ID.Block,ss));
 
 		if (blue == 255 && green == 0)
-		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client, this));
+		    client.addPiece(new Adventurer(xx * 32, yy * 32, ID.Player, client, this,ss));
 	    
 		if (green == 255 && blue == 0)
-		    client.addPiece(new Enemy(xx * 32, yy * 32, ID.Enemy, client));
+		    client.addPiece(new Enemy(xx * 32, yy * 32, ID.Enemy, client,ss));
 	    
 	    if (green == 255 && blue == 255)
-	    	client.addPiece(new Chest(xx * 32, yy * 32, ID.Chest));
+	    	client.addPiece(new Chest(xx * 32, yy * 32, ID.Chest,ss));
 	    }
 	    
 	

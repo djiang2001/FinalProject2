@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Block{
+public class Block extends GamePiece{
 
     public Block(int x, int y, ID id){
 	super(x,y,id);
@@ -11,7 +11,7 @@ public class Block{
     }
 
     public void render(Graphics g){
-	g.setColor(color.black);
+	g.setColor(Color.black);
 	g.fillRect(x,y,32,32);
     }
 

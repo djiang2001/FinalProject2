@@ -7,8 +7,8 @@ public class Adventurer extends GamePiece {
 	Client client;
 	Game game;
 
-	public Adventurer(int x, int y, ID id, Client client, Game game) {
-		super(x, y, id);
+    public Adventurer(int x, int y, ID id, Client client, Game game,SpriteSheet ss) {
+	super(x, y, id,ss);
 		this.client = client;
 		this.game = game;
 	}

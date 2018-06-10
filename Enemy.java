@@ -8,8 +8,8 @@ public class Enemy extends GamePiece{
     int choice = 0;
     int spawnX,spawnY;
     
-    public Enemy(int x,int y, ID id, Client client){
-	super(x,y,id);
+    public Enemy(int x,int y, ID id, Client client,SpriteSheet ss){
+	super(x,y,id,ss);
 	spawnX = x;
 	spawnY = y;
 	this.client = client;
