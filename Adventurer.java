@@ -1,16 +1,20 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.awt.image.*;
 
 public class Adventurer extends GamePiece {
 
 	Client client;
 	Game game;
-
+    private BufferedImage adventImage;
+    
     public Adventurer(int x, int y, ID id, Client client, Game game,SpriteSheet ss) {
 	super(x, y, id,ss);
 		this.client = client;
 		this.game = game;
+
+		adventImage = ss.getImage(8,10,32,32);
 	}
 
 	public void tick() {
@@ -76,8 +80,7 @@ public class Adventurer extends GamePiece {
 	}
 	
 	public void render(Graphics g) {
-		g.setColor(Color.blue);
-		g.fillRect(x, y, 16, 24);
+	    g.drawImage(adventImage,x,y,null);
 
 	}
 

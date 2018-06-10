@@ -11,6 +11,7 @@ public class Game extends Canvas implements Runnable {
     
     private BufferedImage level = null;
     private BufferedImage spriteSheet = null;
+    private BufferedImage floor = null;
     
     private Camera camera;
     public int numSpears = 100;
@@ -26,8 +27,12 @@ public class Game extends Canvas implements Runnable {
 
 	Loader loader = new Loader();
 	level = loader.loadImage("/Level1.png");
-	//spriteSheet = loader.loadImage("/spriteSheet.png");
+	spriteSheet = loader.loadImage("/spriteSheet.png");
 
+	ss = new SpriteSheet(spriteSheet);
+	floor = ss.getImage(15,18,32,32);
+
+			    
 	this.addMouseListener(new MouseInput(client,camera,this,ss));
 
 
@@ -99,11 +104,15 @@ public class Game extends Canvas implements Runnable {
 	Graphics g = b.getDrawGraphics();
 	Graphics2D g2d = (Graphics2D) g;
 	//////////////////////////////
-	g.setColor(Color.red);
-	g.fillRect(0, 0, 1000, 563);
 
 	g2d.translate(-camera.getX(),-camera.getY());
 
+	for(int xx = 0;xx < 30*72; xx += 32){
+	    for(int yy = 0; yy < 30 * 72; yy += 32){
+		g.drawImage(floor,xx,yy,null);
+	    }
+	}
+	
 	client.render(g);
 
 	g2d.translate(camera.getX(),camera.getY());
