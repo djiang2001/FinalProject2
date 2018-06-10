@@ -24,8 +24,8 @@ public class Boss extends GamePiece{
 		if(getBounds().intersects(tempPiece.getBounds())){
 		    x += (velX*2)*-1;
 		    y += (velY*2)*-1;
-		    velX = 0;
-		    velY = 0;
+		    velX*=-1;
+		    velY*=-1;
 		    //collision
 		}
 	    }
