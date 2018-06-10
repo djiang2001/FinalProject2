@@ -23,7 +23,7 @@ public class Start extends JFrame{
     pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
     enter.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent e){
-          new Main();
+          new Game();
           intro.append("UNBLOCKED!");
           pane.remove(enter);
           pane.revalidate();
