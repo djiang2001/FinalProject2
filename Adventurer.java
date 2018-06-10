@@ -59,17 +59,24 @@ public class Adventurer extends GamePiece {
 			
 			if (tempPiece.getId() == ID.Chest) {
 				if (getBounds().intersects(tempPiece.getBounds())) {
-					game.numSpears += 10;
 					
-					if(game.myHp < 100){
-					game.myHp += 100 ;
-					if(game.myHp > 100){
-					    game.myHp = 100;
+					if(game.myHp < 100 && game.numSpears < 100){
+						game.myHp += 20;
+						game.numSpears += 10;
+						client.removePiece(tempPiece);
 					}
-					client.removePiece(tempPiece);
+					else if(game.myHp == 100 && game.numSpears < 100){
+					    game.myHp = 100;
+					    game.numSpears += 10;
+					    client.removePiece(tempPiece);
+					}
+					else{
+						game.myHp = 100;
+						game.numSpears = 100;
+						client.removePiece(tempPiece);
+					}
 					}
 				}
-			}
 			
 			if (tempPiece.getId() == ID.Enemy) {
 				if (getBounds().intersects(tempPiece.getBounds())) {
