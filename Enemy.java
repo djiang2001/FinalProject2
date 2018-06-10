@@ -34,8 +34,8 @@ public class Enemy extends GamePiece{
 			velY *=  -1;
 		    }else
 			if(choice == 0){
-			    velX = (r.nextInt(2));
-			    velY = (r.nextInt(2));
+			    velX = (r.nextInt(2*2+1) -2);
+			    velY = (r.nextInt(2*2+1) - 2);
 			}
 		}
 
