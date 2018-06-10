@@ -1,10 +1,14 @@
 import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.Color;
+import java.awt.image.*;
 
 public class Chest extends GamePiece{
-	public Chest(int x, int y, ID id){
-		super(x, y, id);
+    private BufferedImage chestImage;
+    
+    public Chest(int x, int y, ID id,SpriteSheet ss){
+	super(x, y, id,ss);
+	chestImage = ss.getImage(48,44,32,32);
 	}
 	
 	public void tick(){
@@ -12,9 +16,7 @@ public class Chest extends GamePiece{
 	}
 	
 	public void render(Graphics g){
-		g.setColor(Color.cyan);
-		g.fillRect(x, y, 32, 32);
-	
+	    g.drawImage(chestImage,x,y,null);
 	}
 	
 	public Rectangle getBounds() {

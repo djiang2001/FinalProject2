@@ -8,7 +8,7 @@ public class Chest extends GamePiece{
     
     public Chest(int x, int y, ID id,SpriteSheet ss){
 	super(x, y, id,ss);
-	chestImage = ss.getImage(48,44,32,32);
+	chestImage = ss.getImage(44,46,32,32);
 	}
 	
 	public void tick(){
