@@ -6,21 +6,15 @@ public class Boss extends GamePiece{
     private Client client;
     int hp = 1000;
 
-    public Boss(int x,int y, ID id, Client client){
-	GamePiece tempPiece = client.piece.get(i);
-
-	if(tempPiece.getId() == ID.Block){
-	}
-	//collision
-
-	
+    public Boss(int x,int y, ID id, Client client,SpriteSheet ss){
+	super(x,y,id,ss);
+	this.client = client;
     }
 
     public void tick(){
-	v += velX;
+	x += velX;
 	y += velY;
 
-	choice = r.nextInt(10);
 	
 	for(int i = 0; i < client.piece.size(); i++){
 	    GamePiece tempPiece = client.piece.get(i);
@@ -33,15 +27,11 @@ public class Boss extends GamePiece{
 		    velX = 0;
 		    velY = 0;
 		    //collision
-		} else
-		    if(choice == 0){
-			velX = (r.nextInt(5 - -5) + -5);
-			velY = (r.nextInt(5 - -5) + -5);
-		    }
+		}
 	    }
 	}
-	
     }
+	
     
     public void render(Graphics g){
 	g.setColor(Color.green);

@@ -157,8 +157,10 @@ public class Game extends Canvas implements Runnable {
 	    
 	    if (green == 255 && blue == 255)
 	    	client.addPiece(new Chest(xx * 32, yy * 32, ID.Chest,ss));
+
+	    if(green == 255 && red == 255)
+		client.addPiece(new Boss(xx * 32, yy * 32, ID.Boss,client,ss));
 	    }
-	    
 	
 	}
 }
