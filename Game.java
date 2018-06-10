@@ -146,7 +146,7 @@ public class Game extends Canvas implements Runnable {
 		int blue = (pixel) & 0xff;
 		int yellow = (pixel);
 
-		if (red == 255 && blue == 0)
+		if (red == 255 && blue == 0 && green == 0)
 		    client.addPiece(new Block(xx * 32, yy * 32, ID.Block,ss));
 
 		if (blue == 255 && green == 0)
