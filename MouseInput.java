@@ -19,8 +19,8 @@ public class MouseInput extends MouseAdapter {
 	int mx = (int) (e.getX() + camera.getX());
 	int my = (int) (e.getY() + camera.getY());
 
-	for (int i = 0; i < client.piece.size(); i++) {
-	    GamePiece tempPiece = client.piece.get(i);
+	for (int i = 0; i < client.getPiece().size(); i++) {
+	    GamePiece tempPiece = client.getPiece().get(i);
 
 	    if (tempPiece.getId() == ID.Player && game.numSpears >= 1) {
 		client.addPiece(

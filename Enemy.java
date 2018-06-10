@@ -9,12 +9,9 @@ public class Enemy extends GamePiece{
     int hp = 100;
     Random r = new Random();
     int choice = 0;
-    int spawnX,spawnY;
     
     public Enemy(int x,int y, ID id, Client client,SpriteSheet ss){
 	super(x,y,id,ss);
-	spawnX = x;
-	spawnY = y;
 	this.client = client;
 	enemyImage = ss.getImage(7,9,32,32);
     }
@@ -25,7 +22,7 @@ public class Enemy extends GamePiece{
 
 	choice = r.nextInt(10);
 	
-	for(int i = 0; i < client.piece.size(); i++){
+	for(int i = 0; i < client.getPiece().size(); i++){
 	    GamePiece tempPiece = client.piece.get(i);
 	    
 
@@ -37,8 +34,8 @@ public class Enemy extends GamePiece{
 			velY *=  -1;
 		    }else
 			if(choice == 0){
-			    velX = (r.nextInt(4 - -4) + -4);
-			    velY = (r.nextInt(4 - -4) + -4);
+			    velX = (r.nextInt(2));
+			    velY = (r.nextInt(2));
 			}
 		}
 
@@ -51,12 +48,6 @@ public class Enemy extends GamePiece{
 		}
 	    }
 	}
-	/*if(hp <= 0){
-	    x = spawnX;
-	    y = spawnY;
-	    hp = 100;
-
-	}*/
 		if(hp <= 0){
 			client.removePiece(this);
 		}

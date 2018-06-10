@@ -1,18 +1,22 @@
 import java.awt.*;
 import java.util.*;
+import java.awt.image.*;
+
 public class Enemy extends GamePiece{
 
     private Client client;
+    private BufferedImage enemyImage;
     int hp = 100;
     Random r = new Random();
     int choice = 0;
     int spawnX,spawnY;
     
-    public Enemy(int x,int y, ID id, Client client){
-	super(x,y,id);
+    public Enemy(int x,int y, ID id, Client client,SpriteSheet ss){
+	super(x,y,id,ss);
 	spawnX = x;
 	spawnY = y;
 	this.client = client;
+	enemyImage = ss.getImage(7,9,32,32);
     }
 
     public void tick(){
@@ -59,8 +63,7 @@ public class Enemy extends GamePiece{
     }
 
     public void render(Graphics g){
-	g.setColor(Color.yellow);
-	g.fillRect(x,y,15,15);
+	g.drawImage(enemyImage,x,y,null);
     }
 
     public Rectangle getBounds(){

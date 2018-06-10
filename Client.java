@@ -2,12 +2,11 @@ import java.awt.Graphics;
 import java.util.*;
 
 public class Client{
-    LinkedList<GamePiece> piece = new LinkedList<GamePiece>();
+    ArrayList<GamePiece> piece = new ArrayList<GamePiece>();
     private boolean up = false;
     private boolean down = false;
     private boolean right = false;
     private boolean left = false;
-    private boolean attack = false;
 
     public void tick(){
 	for(int i = 0; i < piece.size(); i++){
@@ -32,11 +31,11 @@ public class Client{
 	piece.remove(tempPiece);
     }
 
-    public LinkedList<GamePiece> getPiece(){
+    public ArrayList<GamePiece> getPiece(){
 	return piece;
     }
     
-    public void setPiece(LinkedList<GamePiece> piece){
+    public void setPiece(ArrayList<GamePiece> piece){
 	this.piece = piece;
     }
 
@@ -70,14 +69,6 @@ public class Client{
 
     public void setLeft(boolean left){
 	this.left = left;
-    }
-    
-    private boolean isAttack(){
-    return attack;
-    }
-    
-    public void setAttack(boolean attack){
-    this.attack = attack;
     }
     
 }

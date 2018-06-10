@@ -12,8 +12,8 @@ public class KeyInput extends KeyAdapter{
     public void keyPressed(KeyEvent e){
 	int key = e.getKeyCode();
 
-	for(int i = 0; i < client.piece.size(); i++){
-	    GamePiece tempPiece = client.piece.get(i);
+	for(int i = 0; i < client.getPiece().size(); i++){
+	    GamePiece tempPiece = client.getPiece().get(i);
 
 	    if(tempPiece.getId() == ID.Player){
 		if(key == KeyEvent.VK_W) client.setUp(true);
@@ -22,9 +22,6 @@ public class KeyInput extends KeyAdapter{
 		if(key == KeyEvent.VK_D) client.setRight(true);
 		
 	    }
-	    /*if(tempPiece.getId() == ID.Block){
-	    if(key == KeyEvent.VK_L) client.setAttack(true);
-	    }*/
 
 	}
 
@@ -34,8 +31,8 @@ public class KeyInput extends KeyAdapter{
 	int key = e.getKeyCode();
 
 	
-	for (int i = 0; i < client.piece.size(); i++) {
-			GamePiece tempPiece = client.piece.get(i);
+	for (int i = 0; i < client.getPiece().size(); i++) {
+	    GamePiece tempPiece = client.getPiece().get(i);
 
 			if (tempPiece.getId() == ID.Player) {
 				if (key == KeyEvent.VK_W)
