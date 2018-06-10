@@ -12,6 +12,8 @@ public class Boss extends GamePiece{
     }
 
     public void tick(){
+	velX = -5;
+	velY = -5;
 	x += velX;
 	y += velY;
 

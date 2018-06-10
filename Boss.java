@@ -23,7 +23,7 @@ public class Boss extends GamePiece{
 
 
 	    if(tempPiece.getId() == ID.Block){
-		if(getBounds().intersects(tempPiece.getBounds())){
+		if(getOuterBounds().intersects(tempPiece.getBounds())){
 		    x += (velX*2)*-1;
 		    y += (velY*2)*-1;
 		    velX*=-1;
