@@ -2,61 +2,59 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-import javax.swing.Timer;
+import javax.swing.border.*;
 
-public class Start extends JFrame{
-  private static Container pane;
-  private JFrame start = new JFrame("Introduction");
-  private static JButton enter = new JButton("Continue");
-  private static JTextArea intro = new JTextArea();
-  private static String words = "In a realm far away, monsters of unknown creation were creating havoc. These monsters escape from the dreaded labyrinth, said to have been created by an ancient cult. Every few months, worthy heroes, unnamed, known as warriors unknown,  are sent in, only to never return. You have been chosen, and now you must face your fate. Save your people, or die trying...";
+public class Start extends JFrame {
+    private Container pane;
+    private JFrame home = new JFrame("Start Page");
+    private JButton start = new JButton("Start");
+    private JLabel backImage;
+    public Start() {
+	
+	pane = this.getContentPane();
+	pane.setLayout(new FlowLayout());
+    
+	start.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+		    home.dispose();
+		    new Story();
+		}
+	    });
+	/*
+	instructions.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+		    home.dispose();
+		    new Instructions();
+		}
+	    });*/
+	
+	backImage = new JLabel();
+	backImage.setLayout(new FlowLayout(FlowLayout.CENTER));
+	backImage.add(Box.createRigidArea(new Dimension(300,300)));
 
-  //Game Intro Constructor
-  public Start(){
-    pane = this.getContentPane();
-    this.setTitle("WarriorsUnkownMaze");
-    this.setSize(1000,563);
-    this.setLocation(700 ,300);
-    this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	backImage.setIcon(new ImageIcon("TEXT HERE.png"));
 
-    //Add properties
-    pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
-    enter.addActionListener(new ActionListener(){
-        public void actionPerformed(ActionEvent e){
-          new Game();
-          intro.append("UNBLOCKED!");
-          pane.remove(enter);
-          pane.revalidate();
-          setVisible(false);
-        }
-      }
-      );
-    intro.setFont(new Font("Segoe Script",Font.ITALIC, 20));
-    intro.setLineWrap(true);
-    intro.setWrapStyleWord(true);
-    intro.setEditable(false);
-    pane.add(intro);
-    pane.add(enter);
-    enter.setVisible(false);
-    this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-  }
+	start.setPreferredSize(new Dimension(200,50));
+	
+	start.setLocation(100,100);
 
-  //Animation Code
-  public static void appendtext(){
-    for (int i = 0; i < words.length(); i++){
-      intro.append(words.charAt(i) + "");
-      try {
-        Thread.sleep(40);}catch(Exception e){}
+	start.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+	
+	backImage.add(start);
+	backImage.add(Box.createRigidArea(new Dimension(400,400)));
+	pane.add(backImage);
+	this.pack();
+	this.setVisible(true);
+	
+
+	this.setTitle("MazeUnknown BattleGrounds");
+	this.setResizable(false);
+	this.setSize(500,500);
+	this.setLocation(100,10);
+	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-    enter.setVisible(true);
-  }
-
-  //Main
-  public static void main(String[]args){
-    Start intro = new Start();
-    intro.setVisible(true);
-    intro.setResizable(false);
-    appendtext();
-  }
-
+    
+    public static void main(String[] args) {
+		new Start();
+    }
 }
