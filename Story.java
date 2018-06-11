@@ -16,7 +16,7 @@ public class Story extends JFrame {
 	pane = this.getContentPane();
 	this.setTitle("WarriorsUnkownMaze");
 	this.setSize(500,500);
-	this.setLocation(700 ,300);
+	this.setLocation(700 ,250);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	//Add properties
@@ -38,7 +38,7 @@ public class Story extends JFrame {
 	pane.add(intro);
 	pane.add(enter);
 	enter.setVisible(false);
-	this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
   //Animation Code

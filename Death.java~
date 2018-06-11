@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.border.*;
+
+public Death extends JFrame{
+    private Container pane;
+    private JFrame death = new JFrame("Resurrect?");
+    private JButton retry = new JButton("Resurrect");
+    private JLabel backImage;
+     
+    public Death(){
+
+	pane = this.getContentPane();
+	pane.setLayout(new FlowLayout());
+
+	retry.addActionListener(new Action Listener(){
+		public void actionPerformed(ActionEvent e){
+		    death.dispose();
+		    new Game();
+		    pane.remove(retry);
+		    pane.revalidate();
+		    setVisible(false);
+		}
+	    }
+
+
+
+
+
+
+    }
+
+
+
+
+
+    
+}

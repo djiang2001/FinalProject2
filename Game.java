@@ -92,6 +92,12 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	client.tick();
+	if(myHp == 0){
+	    new Death();
+	    this.revalidate();
+	    this.setVisible(false);
+	    stop();
+	}
     }
 
     public void render(){

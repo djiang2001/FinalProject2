@@ -55,7 +55,7 @@ public class Start extends JFrame {
 	this.setTitle("MazeUnknown BattleGrounds");
 	this.setResizable(false);
 	this.setSize(500,500);
-	this.setLocation(100,10);
+	this.setLocation(700,250);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
     
