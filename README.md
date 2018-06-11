@@ -14,7 +14,7 @@ Welcome to WUM by Dahong Jiang and Anne Zhang
 * DON'T DIE ;))
 
 Heres an example of what you should see
-![screen shot 2018-01-21 at 11 46 38 pm](https://user-images.githubusercontent.com/33818024/35205765-c022ad9a-ff05-11e7-9461-5d58df0dc3a2.png)
+http://aginsinn.yeoldeinn.com/workingstiff/thumbs/dmaze1thumb.jpg
 
 ## Interesting Features
 * Maze that player can travel through 
