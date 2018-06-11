@@ -47,7 +47,7 @@ public class Death extends JFrame{
 	this.setResizable(false);
 	this.setSize(400,560);
 	this.setLocation(700,250);
-	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
     
     public static void main(String[] args) {

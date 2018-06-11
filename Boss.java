@@ -8,7 +8,7 @@ public class Boss extends GamePiece{
     private BufferedImage bossImage;
     int choice = 0;
     Random r = new Random();
-    int hp = 1000;
+    int hp = 500;
 
     
     public Boss(int x,int y, ID id, Client client,SpriteSheet ss){
