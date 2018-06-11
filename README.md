@@ -1,9 +1,9 @@
 # <b> Final Project: Warriors Unknown Maze </b>
 Welcome to WUM by Dahong Jiang and Anne Zhang
 ## WHAT IS IT?
-* Compile and run Start.java to start
 * Travel through a maze to get to a room. You will encounter enemies so don't be afraid to shoot! When you get to the room there will be enemies and a boss. You can always go back into the maze for boosts of health and more spears. GOAL: KILL THE BOSS. 
 ## HOW TO PLAY!
+* Compile and run Start.java to start
 * Get familiar with the WASD keys (thats how you move!)
 * To shoot click with your mouse whatever direction you want your spear to go! 
 * There are ghosts with hp of 100. spooky! Each spear does 25 damage! 
