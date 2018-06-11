@@ -29,15 +29,20 @@ public class Boss extends GamePiece{
 
 		if(tempPiece.getId() == ID.Block){
 		    if(getOuterBounds().intersects(tempPiece.getBounds())){
-			x += (velX * 5) * -1;
-			y += (velY * 5) * -1;
+			x += (velX * 2) * -1;
+			y += (velY * 2) * -1;
 			velX *=  -1;
 			velY *=  -1;
 		    }else
 			if(choice == 0){
 			    velX = (r.nextInt(2*5+1) -5);
 			    velY = (r.nextInt(2*5+1) -5);
-			}
+			    }
+		} else if(tempPiece.getId() == ID.Player){
+		    if(getOuterBounds().intersects(tempPiece.getBounds())){
+			velX = (tempPiece.getX() - x)/ 100;
+			velY = (tempPiece.getY() - y) / 100;
+		    }
 		}
 
 
@@ -66,5 +71,8 @@ public class Boss extends GamePiece{
     public Rectangle getOuterBounds(){
 	return new Rectangle(x - 8 ,y - 8,32,32);
     }
-	
+    public Rectangle getDetectionRadius(){
+	return new Rectangle(x - 8, y - 8, 500,500);
+    }
 }
+

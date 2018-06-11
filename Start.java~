@@ -17,12 +17,7 @@ public class Start extends JFrame {
 	start.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 		    home.dispose();
-		    Story story = new Story();
-		    story.setVisible(true);
-		    story.appendtext();
-		    pane.remove(start);
-		    pane.revalidate();
-		    setVisible(false);
+		    new Story();
 		}
 	    });
 	/*

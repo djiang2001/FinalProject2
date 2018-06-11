@@ -28,8 +28,8 @@ public class Enemy extends GamePiece{
 
 		if(tempPiece.getId() == ID.Block){
 		    if(getOuterBounds().intersects(tempPiece.getBounds())){
-			x += (velX * 5) * -1;
-			y += (velY * 5) * -1;
+			x += (velX * 2) * -1;
+			y += (velY * 2) * -1;
 			velX *=  -1;
 			velY *=  -1;
 		    }else
